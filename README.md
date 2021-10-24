@@ -22,7 +22,6 @@ But it's still a question is that if you do not add:
 time.sleep(...)
 ```
 You will get errors for some reasons. It seems that if you are using `win32clipboard.OpenClipboard()`, you can not do paste operation before `win32clipboard.CloseClipboard()`. I am not sure about this. If you know something, **pls email me**.
-Also, i do not make a .exe.
 
 ## Final Notice:🚧
 You may be not able to open the NewlineReplacer.exe or run the main.py, that's because **`Specified clipboard format is not available`**. You may copy some imgs or something, that will cause the exe stopping.
