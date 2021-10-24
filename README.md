@@ -1,4 +1,4 @@
-# NewlineReplacer is a useful .py file to replace your newline with space. It is very useful when you want to copy some essays.😏
+# NewlineReplacer is a useful tool to replace your newline with space. It is very useful when you want to copy some essays.😏
 ## Awkward Situation:
 Do you have this moment:
 * Want to translate your essay to Chinese, but when you put them into Google Translator, it was so many new lines you heed to remove.
