@@ -20,20 +20,23 @@ if my_os == 'windows':
 
 
     while True:
-        # mointor clipboard
-        time.sleep(2) # important step, or will error, idk right now
-        win32clipboard.OpenClipboard()
-        text_essay = win32clipboard.GetClipboardData()
-        win32clipboard.CloseClipboard()
-
-        if text_essay != current_clipboard:
-            out = text_essay.replace('\r\n', ' ')
-
-            # Set str to Clipboard
+        try:
+            # mointor clipboard
+            time.sleep(2) # important step, or will error, idk right now
             win32clipboard.OpenClipboard()
-            win32clipboard.EmptyClipboard()
-            win32clipboard.SetClipboardText(out)
+            text_essay = win32clipboard.GetClipboardData()
             win32clipboard.CloseClipboard()
 
-            # print('change')
-            current_clipboard = out
+            if text_essay != current_clipboard:
+                out = text_essay.replace('\r\n', ' ')
+
+                # Set str to Clipboard
+                win32clipboard.OpenClipboard()
+                win32clipboard.EmptyClipboard()
+                win32clipboard.SetClipboardText(out)
+                win32clipboard.CloseClipboard()
+
+                # print('change')
+                current_clipboard = out
+        except:
+            print("something wrong in clipboard")
