@@ -17,7 +17,7 @@ py32win
 ## What you need to do is just Run the NewlineReplacer.exe😏💖 and you can just copy from your ewssay pdf without newlines!!!!🔥
 ```
 ├── dist
-│   ├── main
+│   ├── exe
 │   │   ├── NewlineReplacer.exe
 └── main.py
 ```
