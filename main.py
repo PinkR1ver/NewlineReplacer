@@ -11,12 +11,15 @@ elif platform == "win32":
 
 if my_os == 'windows':
     # first get str from CLipboard
-    win32clipboard.OpenClipboard()
-    current_clipboard = win32clipboard.GetClipboardData()
-    out = current_clipboard.replace('\r\n', ' ')
-    win32clipboard.EmptyClipboard()
-    win32clipboard.SetClipboardText(out)
-    win32clipboard.CloseClipboard()
+    try:
+        win32clipboard.OpenClipboard()
+        current_clipboard = win32clipboard.GetClipboardData()
+        out = current_clipboard.replace('\r\n', ' ')
+        win32clipboard.EmptyClipboard()
+        win32clipboard.SetClipboardText(out)
+        win32clipboard.CloseClipboard()
+    except:
+        win32clipboard.CloseClipboard()
 
     while True:
         try:
@@ -27,16 +30,14 @@ if my_os == 'windows':
                     text_essay = win32clipboard.GetClipboardData()
                     win32clipboard.CloseClipboard()
 
-                    if text_essay != current_clipboard:
-                        out = text_essay.replace('\r\n', ' ')
+                    if '\r\n' in text_essay or '\n' in text_essay:
+                        out = text_essay.replace('\r\n', ' ').replace('\n', ' ')
 
                         # Set str to Clipboard
                         win32clipboard.OpenClipboard()
                         win32clipboard.EmptyClipboard()
                         win32clipboard.SetClipboardText(out)
                         win32clipboard.CloseClipboard()
-
-                        # print('change')
-                        current_clipboard = out
         except:
-            print("something wrong in clipboard")
+            win32clipboard.CloseClipboard()
+            print("Not text in cilpboard")
