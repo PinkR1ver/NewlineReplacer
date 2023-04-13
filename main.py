@@ -40,4 +40,4 @@ if my_os == 'windows':
                         win32clipboard.CloseClipboard()
         except:
             win32clipboard.CloseClipboard()
-            print("Not text in cilpboard")
+            # print("Not text in cilpboard")
